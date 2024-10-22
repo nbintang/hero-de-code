@@ -27,7 +27,7 @@ const config: Config = {
   				DEFAULT: '#FFBF99',
   			},
 			tertiary: {
-				DEFAULT: "#F9FBFB"	
+				DEFAULT: "#F4F4F4"	
 			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
