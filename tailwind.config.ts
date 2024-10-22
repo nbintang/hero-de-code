@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import animated from "tailwindcss-animate";
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -21,13 +21,14 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: '#629D8C',
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
+  				DEFAULT: '#FFBF99',
   			},
+			tertiary: {
+				DEFAULT: "#F9FBFB"	
+			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
@@ -58,6 +59,6 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animated],
 };
 export default config;
