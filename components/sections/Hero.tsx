@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="flex justify-between items-center ">
-      <div className="max-w-lg flex flex-col gap-12  items-start">
+      <div className="flex-[0_0_45%] flex flex-col gap-12  items-start">
         <div className="space-y-9">
           <h1 className="text-6xl font-medium">
             Lorem ipsum dolor sit amet consectetur.
