@@ -4,13 +4,17 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex justify-between items-center">
-      <div className="max-w-lg h-full  space-y-12">
-        <h1 className="text-5xl font-medium">Lorem ipsum dolor sit amet consectetur.</h1>
-        <p className="text-xl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          dignissimos a facere, voluptates optio sequi?
-        </p>
+    <section className="flex justify-between items-center ">
+      <div className="max-w-lg flex flex-col gap-12  items-start">
+        <div className="space-y-9">
+          <h1 className="text-6xl font-medium">
+            Lorem ipsum dolor sit amet consectetur.
+          </h1>
+          <p className="text-xl">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+            dignissimos a facere, voluptates optio sequi?
+          </p>
+        </div>
         <Button className="px-5 text-white">Book Appointment</Button>
       </div>
 
@@ -29,6 +33,6 @@ export default function Hero() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
