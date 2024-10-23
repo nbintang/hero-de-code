@@ -29,7 +29,7 @@ export default function Chooseus() {
               <h1 className="text-xl">Tailored to You</h1>
             </div>
             <p className="text-[#4F4F4F]">
-              We don’t just treat symptoms; we focus on understanding and
+              We don’t just treat symptoms, we focus on understanding and
               healing the root causes of mental health challenges.
             </p>
           </div>
