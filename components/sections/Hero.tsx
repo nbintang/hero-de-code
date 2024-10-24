@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="flex justify-between items-center ">
+    <section className="flex justify-between flex-wrap-reverse items-center ">
       <div className="flex-[0_0_45%] flex flex-col gap-12  items-start">
         <div className="space-y-9">
           <h1 className="text-6xl font-medium">
@@ -22,7 +22,7 @@ export default function Hero() {
         {[1, 2, 3, 4].map((_, i) => (
           <div
             key={i}
-            className="relative w-64 h-80 rounded-2xl overflow-hidden"
+            className="relative w-52 h-80 rounded-2xl overflow-hidden"
           >
             <Image
               src="/img/hero.jpg"
