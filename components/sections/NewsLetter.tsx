@@ -1,9 +1,12 @@
+import { Button } from "../ui/button";
+
 const NewsLetter = () => {
   return (
-    <section className="max-w-6xl px-4 flex flex-col items-center justify-between py-16 md:flex-row md:py-24">
-      {/* Left Side (Text) */}
+  <section >
+      <div className="mx-auto max-w-6xl px-4 flex flex-col items-center justify-between py-16 md:flex-row md:py-24">
+     
       <div className="md:space-y-6">
-        <h2 className="max-w-sm text-3xl mb-4 font-semibold text-gray-800 md:text-4xl ">
+        <h2 className="max-w-sm text-4xl mb-4 font-medium text-gray-800 md:text-4xl ">
           Start Your Healing Today
         </h2>
         <p className="max-w-md text-gray-600">
@@ -12,13 +15,14 @@ const NewsLetter = () => {
         </p>
       </div>
 
-      {/* Right Side (Button) */}
+     
       <div className="mr-0 mt-8 md:mt-0">
-        <button className="px-20 py-2 bg-[#629D8C] text-white rounded-md hover:bg-teal-600 shadow-lg">
+        <Button className="px-20 py-2 text-white shadow-lg">
           Schedule
-        </button>
+        </Button>
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 

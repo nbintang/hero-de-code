@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import Logo from "../../public/img/logo.svg";
 import { FaBars, FaXmark } from "react-icons/fa6";
 
 export default function Navbar() {
@@ -17,12 +16,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full py-4 z-50 shadow-sm">
+    <nav className="w-full ">
       <div className="px-4 sm:px-6 lg:px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex max-w-6xl mx-auto items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image src={Logo} alt="Serenity Haven Wellness" />
+            <Image src={"/img/logo.svg"} alt="Serenity Haven Wellness" width={40} height={40} />
           </Link>
 
           {/* Desktop Navigation */}

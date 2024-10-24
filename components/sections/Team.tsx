@@ -2,9 +2,9 @@ import React from "react";
 import AvatarPersonCard from "../AvatarPersonCard";
 export default function Team() {
   return (
-    <section>
+    <section className="mx-auto max-w-6xl">
       <h5 className="text-primary text-sm">Meet Our Team</h5>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between  items-center">
         <h1 className="text-5xl font-medium flex-[0_0_45%]">
           Compassionate, Experienced, and Ready to Support You
         </h1>
@@ -14,7 +14,7 @@ export default function Team() {
           journey.
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-4 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-10">
         {Array.from({ length: 8 }).map((_, i) => (
           <AvatarPersonCard key={i} />
         ))}

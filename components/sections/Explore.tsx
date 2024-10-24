@@ -7,10 +7,10 @@ import Image from 'next/image'
 
 export default function Explore() {
   return (
-    <div className='flex flex-col gap-20 py-10'>
+    <div className='flex flex-col max-w-6xl mx-auto gap-20 py-10'>
         <div className='text-center md:text-start'>
             <p className='text-primary'>What We Offer</p>
-            <h1 className='font-semibold text-3xl' >Explore Our Comprehensive<br/>Wellness Services</h1>
+            <h1 className='text-4xl font-medium' >Explore Our Comprehensive<br/>Wellness Services</h1>
             <p className='font-medium pt-10 text-[#4F4F4F]'>We believe mental health is a journey, and every journey<br/>deserves personalized guidance.</p>
         </div>
         <div className='flex items-center md:flex-row flex-col gap-10 justify-between'>

@@ -4,7 +4,8 @@ import Image from "next/image";
 
 export default function Findpath() {
   return (
-    <div className="flex md:flex-row flex-col items-center gap-10">
+    <section className="w-full bg-gray-100">
+      <div className="flex max-w-6xl mx-auto md:flex-row flex-col items-center gap-10">
       <div className="md:w-2/3 flex flex-col gap-10">
         <h1 className="font-medium text-3xl">Find Your Path to Inner Peace</h1>
         <p className="text-[#4F4F4F]">
@@ -36,5 +37,6 @@ export default function Findpath() {
         <Image src={people} alt="" className="bg-primary/50 pt-28 rounded-xl" />
       </div>
     </div>
+    </section>
   );
 }

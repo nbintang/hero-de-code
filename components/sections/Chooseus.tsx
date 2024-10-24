@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Chooseus() {
   return (
-    <div className="flex flex-col gap-16 py-10">
+    <div className="flex flex-col max-w-6xl mx-auto gap-16 py-10">
       <div className="flex md:flex-row flex-col justify-between items-center text-center md:text-start gap-10">
         <div className="md:w-1/2">
           <p className="text-primary">Why Choose Us</p>
