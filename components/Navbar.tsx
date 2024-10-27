@@ -1,6 +1,6 @@
 "use client";
+import { HospitalIcon } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 
@@ -16,13 +16,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full ">
+    <nav className="w-full fix">
       <div className="px-4 sm:px-6 lg:px-4">
         <div className="flex max-w-6xl mx-auto items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Image src={"/img/logo.svg"} alt="Serenity Haven Wellness" width={40} height={40} />
-          </Link>
+        <div className="flex items-center space-x-2">
+        <HospitalIcon/>
+            <h2 className="text-xl font-bold hidden md:inline-block">Serenity Haven Wellness</h2>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

@@ -1,17 +1,16 @@
 import React from "react";
-import windows from "@/public/logo/windows.png";
-import head from "@/public/logo/head.png";
-import medicine from "@/public/logo/medecine.png";
-import protect from "@/public/logo/protect.png";
-import Image from "next/image";
+import { BriefcaseMedical, LayoutGrid, Lock } from "lucide-react";
+import HumanMind from "../svg/HumanMind";
 
 export default function Chooseus() {
   return (
-    <div className="flex flex-col max-w-6xl mx-auto gap-16 py-10">
+    <div className="flex flex-col max-w-6xl mx-5 lg:mx-auto gap-16 py-10">
       <div className="flex md:flex-row flex-col justify-between items-center text-center md:text-start gap-10">
         <div className="md:w-1/2">
           <p className="text-primary">Why Choose Us</p>
-          <h1 className="text-5xl">Your Unique Journey to Healing</h1>
+          <h1 className="text-2xl md:text-3xl lg:text-5xl">
+            Your Unique Journey to Healing
+          </h1>
         </div>
         <div className="md:w-1/2">
           <p className="text-[#4F4F4F]">
@@ -21,54 +20,49 @@ export default function Chooseus() {
           </p>
         </div>
       </div>
-      <div className="flex md:flex-row flex-col gap-5">
-        <div className=" md:w-1/2 flex flex-col gap-10 text-center md:text-start">
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col items-center md:items-start">
-              <Image src={windows} alt="logo" />
-              <h1 className="text-xl">Tailored to You</h1>
-            </div>
-            <p className="text-[#4F4F4F]">
-              We don’t just treat symptoms, we focus on understanding and
-              healing the root causes of mental health challenges.
-            </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-5 md:mx-0">
+        <div className="flex flex-col ">
+          <div className=" flex flex-col items-center md:items-start mb-3 md:mb-5">
+            <LayoutGrid className="text-primary w-10 h-10" />
+            <h1 className="text-lg md:text-xl">Tailored to You</h1>
           </div>
-
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col items-center md:items-start">
-              <Image src={head} alt="logo" />
-              <h1 className="text-xl">Modern, Calming Environment</h1>
-            </div>
-            <p className="text-[#4F4F4F]">
-              Designed with your comfort in mind, our serene atmosphere promotes
-              relaxation and emotional safety from the moment you walk in.
-            </p>
-          </div>
+          <p className="text-center md:text-start text-sm md:text-base">
+            We don’t just treat symptoms, we focus on understanding and healing
+            the root causes of mental health challenges.
+          </p>
         </div>
-        <div className=" md:w-1/2 flex flex-col gap-10 text-center md:text-start">
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col items-center md:items-start">
-              <Image src={medicine} alt="logo" />
-              <h1 className="text-xl">Flexible Consultation Options</h1>
-            </div>
-            <p className="text-[#4F4F4F]">
-              Online, in-person, or hybrid. Our flexible consultation options
-              make it easier than ever to get the support you need on your
-              terms.
-            </p>
-          </div>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col items-center md:items-start">
-              <Image src={protect} alt="logo" />
-              <h1 className="text-xl">MConfidential & Safe</h1>
-            </div>
-            <p className="text-[#4F4F4F]">
-              Your privacy and safety are our utmost priority. All consultations
-              are held with the highest standard of confidentiality.
-            </p>
+        <div className="flex flex-col  ">
+          <div className="flex flex-col items-center md:items-start mb-3 md:mb-5">
+            <BriefcaseMedical className="text-primary w-10 h-10" />
+            <h1 className="text-lg md:text-xl">Flexible Consultation Options</h1>
           </div>
+          <p className="text-center md:text-start text-sm md:text-base">
+            Online, in-person, or hybrid. Our flexible consultation options make
+            it easier than ever to get the support you need on your terms.
+          </p>
         </div>
+        <div className="flex flex-col ">
+          <div className="flex flex-col items-center md:items-start mb-3 md:mb-5">
+            <HumanMind className="text-primary w-10 h-10" />
+            <h1 className="text-lg md:text-xl">Modern, Calming Environment</h1>
+          </div>
+          <p className="text-center text-sm md:text-base md:text-start">
+            Designed with your comfort in mind, our serene atmosphere promotes
+            relaxation and emotional safety from the moment you walk in.
+          </p>
+        </div>
+        <div className="flex flex-col ">
+          <div className="flex flex-col items-center md:items-start mb-3 md:mb-5">
+            <Lock className="text-primary w-10 h-10" />
+            <h1 className="text-lg md:text-xl">MConfidential & Safe</h1>
+          </div>
+          <p className="text-center md:text-start text-sm md:text-base">
+          our privacy and safety are our utmost priority. All consultations
+          are held with the highest standard of confidentiality.
+          </p>
+        </div>
+       
       </div>
     </div>
   );

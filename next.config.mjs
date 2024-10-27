@@ -8,6 +8,11 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
+                hostname: 'unsplash.com',
+                pathname: '/photos/**',
+            },
+            {
+                protocol: 'https',
                 hostname: 'github.com',
             },
         ],

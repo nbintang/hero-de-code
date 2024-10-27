@@ -1,5 +1,4 @@
 import Image from "next/image";
-import abtPhoto from "../../public/img/org.png";
 
 const AbtSection = () => {
   return (
@@ -10,21 +9,23 @@ const AbtSection = () => {
           <div className="w-full md:w-1/2">
             <div className="relative w-full aspect-video rounded-lg overflow-hidden">
               <Image
-                src={abtPhoto}
+                src={"/img/psyco.jpg"}
                 alt="Therapy session at Serenity Haven Wellness"
-                className="object-cover"
+                className="object-cover w-full h-full"
+                width={200}
+                height={200}
               />
             </div>
           </div>
 
           {/* Content Section */}
           <div className="grid grid-cols-1 gap-4 w-full space-y-8 md:w-1/2">
-            <h2 className="text-4xl font-medium  text-gray-900 mb-4 leading-snug">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl   font-semibold  text-gray-900 mb-4 leading-snug">
               Discover the Transformative Benefits of Choosing Serenity Haven
               Wellness for Your Care
             </h2>
 
-            <p className="text-gray-600 ">
+            <p className="text-muted-foreground text-sm md:text-base ">
               At Serenity Haven Wellness, we prioritize your emotional health
               with personalized, compassionate care. Our diverse range of
               services ensures that you receive the support you need to thrive

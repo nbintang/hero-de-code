@@ -1,21 +1,25 @@
 import React from "react";
-import people from "@/public/img/people.png";
-import Image from "next/image";
+import { Card, CardContent } from "../ui/card";
+import Therapy from "../svg/Therapy";
 
 export default function Findpath() {
   return (
-    <section className="w-full bg-gray-100">
-      <div className="flex max-w-6xl mx-auto md:flex-row flex-col items-center gap-10">
-      <div className="md:w-2/3 flex flex-col gap-10">
-        <h1 className="font-medium text-3xl">Find Your Path to Inner Peace</h1>
-        <p className="text-[#4F4F4F]">
-          At Serenity Haven Wellness, we offer a variety of therapeutic services
-          designed to support your journey towards emotional well-being. Our
-          experienced professionals are dedicated to helping you find the right
-          path for your unique needs.
-        </p>
-        <div className="flex">
-          <div className="flex flex-col items-start gap-3">
+    <section className="w-full bg-tertiary">
+      <div className=" max-w-6xl mx-auto grid grid-cols-3 ">
+        <div className=" grid grid-cols-2 col-span-2 ">
+          <div className="col-span-2">
+            <h1 className="font-medium text-3xl">
+              Find Your Path to Inner Peace
+            </h1>
+            <p className="text-[#4F4F4F]">
+              At Serenity Haven Wellness, we offer a variety of therapeutic
+              services designed to support your journey towards emotional
+              well-being. Our experienced professionals are dedicated to helping
+              you find the right path for your unique needs.
+            </p>
+          </div>
+
+          <div className="flex col-span-1 flex-col items-start gap-3">
             <h1 className="text-xl">Individual Therapy</h1>
             <p>
               Personalized sessions to address your emotional challenges and
@@ -23,7 +27,7 @@ export default function Findpath() {
             </p>
             <button className="text-primary">Read More</button>
           </div>
-          <div className="flex flex-col items-start gap-3">
+          <div className="flex flex-col col-span-1 items-start gap-3">
             <h1 className="text-xl">Individual Therapy</h1>
             <p>
               Personalized sessions to address your emotional challenges and
@@ -32,11 +36,13 @@ export default function Findpath() {
             <button className="text-primary">Read More</button>
           </div>
         </div>
+
+        <Card className="bg-primary/70 col-span-1 relative h-96 w-96">
+          <CardContent>
+            <Therapy className="absolute w-full left-0 translate-y-8 -bottom-3 h-full " />
+          </CardContent>
+        </Card>
       </div>
-      <div>
-        <Image src={people} alt="" className="bg-primary/50 pt-28 rounded-xl" />
-      </div>
-    </div>
     </section>
   );
 }
