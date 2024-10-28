@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import SlideTabs from "./ui/slide-tabs";
-import Header from "./ui/mobile-nav";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
