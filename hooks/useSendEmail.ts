@@ -37,14 +37,14 @@ export default function useSendEmail() {
     try {
       const response = await sendEmail({
         to: email,
-        subject: "Feedback",
+        subject: "Contact Form Submission",
         text,
       });
 
       if (response?.messageId) {
-        toast.success("Thank you for your feedback!");
+        toast.success("Thank you for your Submission!, we will get back to you shortly.");
       } else {
-        toast.error("Failed to send feedback. Please try again later.");
+        toast.error("Failed to send Submission. Please try again later.");
       }
       setIsLoading(false);
     } catch (error) {
