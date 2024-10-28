@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import AosLayout from "@/components/AosLayout";
-import WhatsApp from "@/components/svg/Whatsapp";
+import WhatsApp from "@/components/svg/WhatsApp";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
