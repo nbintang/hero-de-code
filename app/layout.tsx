@@ -4,6 +4,8 @@ import "./globals.css";
 import AosLayout from "@/components/AosLayout";
 import FloatingActionButton from "@/components/FloatingActionsButton";
 import { Toaster } from "react-hot-toast";
+import DrawerDialog from "@/components/DrawerDialog";
+import { ActionFloatButtonProvider } from "@/context/useActionFloatButtonContext";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,11 +34,13 @@ export default function RootLayout({
       >
         <AosLayout>
           <div className="flex flex-col relative min-h-[100dvh] overflow-x-hidden">
-            <div className="flex flex-col flex-1  ">
-              {children}
+            <ActionFloatButtonProvider>
+              <div className="flex flex-col flex-1  ">
+                {children}
                 <FloatingActionButton />
-            
-            </div>
+                <DrawerDialog />
+              </div>
+            </ActionFloatButtonProvider>
             <Toaster />
           </div>
         </AosLayout>

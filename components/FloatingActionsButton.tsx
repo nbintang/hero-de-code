@@ -1,41 +1,17 @@
 "use client";
-
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Mail, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-} from "@/components/ui/drawer";
-import FormEmail from "./FormContact";
 import { FaWhatsapp } from "react-icons/fa";
-import useMediaQuery from "@/hooks/useMediaQuery";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-export default function FloatingActionButtonV2() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
-  const toggleOpen = () => setIsOpen(!isOpen);
+import { useActionFloatButtonContext } from "@/context/useActionFloatButtonContext";
+import Link from "next/link";
+import useContactWA from "@/hooks/useContactWA";
 
-  const openDrawer = () => {
-    setIsDrawerOpen(true);
-  };
-
+export default function FloatingActionButton() {
+  const { isOpen, toggleOpen, openDrawer } = useActionFloatButtonContext();
+  const whatsappUrl = useContactWA();
   return (
     <>
-      <div className="fixed bottom-4 right-4 z-50">
+      <div className="fixed bottom-4 right-4 z-40">
         <AnimatePresence>
           {isOpen && (
             <>
@@ -48,7 +24,13 @@ export default function FloatingActionButtonV2() {
                 className="absolute bottom-16 right-0 p-3 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                 aria-label="Call"
               >
-                <FaWhatsapp size={24} />
+                <Link
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaWhatsapp size={24} />
+                </Link>
               </motion.button>
               <motion.button
                 key="mail"
@@ -94,37 +76,6 @@ export default function FloatingActionButtonV2() {
           </AnimatePresence>
         </motion.button>
       </div>
-      {isDesktop && (
-        <Dialog open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-          <DialogContent className="sm:max-w-[425px]">
-            <DialogHeader>
-              <DialogTitle>Edit profile</DialogTitle>
-              <DialogDescription>
-                Make changes to your profile here. Click save when you’re done.
-              </DialogDescription>
-            </DialogHeader>
-            <FormEmail />
-          </DialogContent>
-        </Dialog>
-      )}
-      {!isDesktop && (
-        <Drawer dismissible={false} open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-          <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>Contact Us via Email</DrawerTitle>
-              <DrawerDescription>
-                Send us a message and we&lsquo;ll get back to you soon.
-              </DrawerDescription>
-            </DrawerHeader>
-            <FormEmail />
-            <DrawerFooter>
-              <DrawerClose asChild>
-                <Button variant="outline"  onClick={() => setIsDrawerOpen(false)}>Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-      )}
     </>
   );
 }

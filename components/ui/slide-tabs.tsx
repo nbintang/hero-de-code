@@ -1,32 +1,27 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 
-const tabs = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Our Service" },
-  { href: "/appointments", label: "Appointments" },
-];
-type Tab = typeof tabs[number];
-
+type Tab = { href: string; label: string };
 interface ChipProps {
   text: Tab;
   selected: boolean;
   setSelected: (tab: Tab) => void;
 }
 
-const ChipTabs = () => {
+const ChipTabs = ({ tabs }: { tabs: { href: string; label: string }[] }) => {
   const [selected, setSelected] = useState<Tab>(tabs[0]);
 
   return (
     <div className="px-4 py-14  flex items-center flex-wrap gap-2">
       {tabs.map((tab) => (
-        <Chip
-          text={tab}
-          selected={selected === tab}
-          setSelected={setSelected}
-          key={tab.href}
-        />
+        <Link key={tab.href} href={tab.href}>
+          <Chip
+            text={tab}
+            selected={selected === tab}
+            setSelected={setSelected}
+          />
+        </Link>
       ))}
     </div>
   );
@@ -39,7 +34,7 @@ const Chip: React.FC<ChipProps> = ({ text, selected, setSelected }) => {
       className={`${
         selected
           ? "text-white"
-          : "text-black hover:text-white hover:bg-primary/70"
+          : "text-black hover:text-black hover:bg-tertiary"
       } text-sm transition-colors px-2.5 py-0.5 rounded-md relative`}
     >
       <span className="relative z-10">{text.label}</span>

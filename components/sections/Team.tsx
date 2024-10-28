@@ -15,7 +15,7 @@ export default async function Team() {
             Compassionate, Experienced, and Ready to Support You
           </h1>
         </div>
-        <p className=":text-base ml-5 lg:text-lg  text-black/60 text-center lg:text-start   ">
+        <p className=":text-base ml-5 lg:text-lg  text-muted-foreground text-center lg:text-start   ">
           Our team of licensed therapists and mental health professionals bring
           a wealth of knowledge and empathy to guide you on your wellness
           journey.

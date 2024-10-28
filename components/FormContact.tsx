@@ -13,12 +13,14 @@ import {
 import { Button } from "@/components/ui/button";
 import useSendEmail from "@/hooks/useSendEmail";
 import { LoaderCircleIcon } from "lucide-react";
+import { useActionFloatButtonContext } from "@/context/useActionFloatButtonContext";
 
-export default function FormEmail(props: React.ComponentProps<'form'>) {
+export default function FormEmail(props: React.ComponentProps<"form">) {
   const { form, onSubmit, isLoading } = useSendEmail();
+  const { setIsDrawerOpen } = useActionFloatButtonContext();
   return (
-    <Form {...form} >
-      <form onSubmit={onSubmit} className="space-y-8" {...props}>
+    <Form {...form}>
+      <form onSubmit={onSubmit} className="space-y-8 mx-3" {...props}>
         <FormField
           control={form.control}
           name="name"
@@ -37,7 +39,7 @@ export default function FormEmail(props: React.ComponentProps<'form'>) {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>email</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input placeholder="Enter your email" {...field} />
               </FormControl>
@@ -60,16 +62,29 @@ export default function FormEmail(props: React.ComponentProps<'form'>) {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full py-2" disabled={isLoading}>
-          {isLoading ? (
-            <>
-              <LoaderCircleIcon className="animate-spin " />
-              <p className="ml-2">Loading...</p>
-            </>
-          ) : (
-            "Add Quiz"
-          )}
-        </Button>
+        <div className="space-y-4">
+          <Button
+            type="submit"
+            className="w-full py-2 text-white"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <>
+                <LoaderCircleIcon className="animate-spin " />
+                <p className="ml-2">Loading...</p>
+              </>
+            ) : (
+              "Submit"
+            )}
+          </Button>
+          <Button
+            variant="outline"
+            className="w-full py-2"
+            onClick={() => setIsDrawerOpen(false)}
+          >
+            Cancel
+          </Button>
+        </div>
       </form>
     </Form>
   );

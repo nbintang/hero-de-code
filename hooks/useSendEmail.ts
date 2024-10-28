@@ -42,7 +42,9 @@ export default function useSendEmail() {
       });
 
       if (response?.messageId) {
-        toast.success("Thank you for your Submission!, we will get back to you shortly.");
+        toast.success(
+          "Thank you for your Submission!, we will get back to you shortly."
+        );
       } else {
         toast.error("Failed to send Submission. Please try again later.");
       }
