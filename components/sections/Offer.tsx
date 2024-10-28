@@ -7,15 +7,15 @@ import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 
 export default function Explore() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="container md:max-w-6xl mx-auto px-4 py-10">
       <div className="text-center md:text-start ">
-        <p className="text-primary">What We Offer</p>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
+        <p className="text-primary text-sm">What We Offer</p>
+        <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold">
           Explore Our Comprehensive
           <br />
           Wellness Services
         </h1>
-        <p className="font-medium mt-2 text-sm md:text-base text-muted-foreground text-[#4F4F4F]">
+        <p className="font-medium mt-2 text-base lg:text-lg  text-muted-foreground text-[#4F4F4F]">
           We believe mental health is a journey, and every journey
           <br />
           deserves personalized guidance.
@@ -32,7 +32,7 @@ export default function Explore() {
             </h1>
           </CardHeader>
           <CardContent className="flex-grow">
-            <div className="absolute bottom-0 right-0 w-1/2 translate-y-6 translate-x-3">
+            <div className="absolute -bottom-7 right-0 w-1/2 translate-x-3">
               <MentalHealth />
             </div>
           </CardContent>

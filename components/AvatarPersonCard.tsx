@@ -1,25 +1,42 @@
 import React from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Linkedin } from "lucide-react";
-const AvatarPersonCard = () => {
+import { Linkedin, Facebook, Twitter } from "lucide-react";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+const AvatarPersonCard = (props: {
+  img: string;
+  name: string;
+  speciality: string;
+}) => {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <Avatar className="w-40 h-40">
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback delayMs={600}>SC</AvatarFallback>
-      </Avatar>
-      <div className="space-y-1 text-center">
-        <h4 className="text-xl">Dr. John Doe, PhD</h4>
-        <p className="text-sm">Board-Certified Psychiatrist</p>
-      </div>
-      <div className="flex gap-2 mt-4">
-        {[1, 2, 3].map((_, i) => (
-          <div key={i} className="p-1 bg-black rounded-full">
-            <Linkedin className="text-white w-3 h-3" />
-          </div>
-        ))}
-      </div>
-    </div>
+    <Card className="flex flex-col items-center gap-4  mx-4">
+      <CardHeader>
+        <Avatar className="w-20 h-20 sm:w-24 sm:h-24 md:w-30 md:h-30 md:w-30 lg:w-40 lg:h-40">
+          <AvatarImage src={props.img} alt="person" className="object-cover" />
+          <AvatarFallback delayMs={600}>SC</AvatarFallback>
+        </Avatar>
+      </CardHeader>
+      <CardContent className="space-y-1 text-center">
+        <CardTitle className="text-lg lg:text-xl">{props.name}</CardTitle>
+        <p className="text-xs text-muted-foreground">{props.speciality}</p>
+      </CardContent>
+      <CardFooter className="flex gap-2 ">
+        <div className="p-1 bg-black rounded-full">
+          <Facebook className="text-white w-3 h-3" />
+        </div>
+        <div className="p-1 bg-black rounded-full">
+          <Linkedin className="text-white w-3 h-3" />
+        </div>
+        <div className="p-1 bg-black rounded-full">
+          <Twitter className="text-white w-3 h-3" />
+        </div>
+      </CardFooter>
+    </Card>
   );
 };
 

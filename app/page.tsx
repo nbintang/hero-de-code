@@ -1,8 +1,8 @@
 import Team from "@/components/sections/Team";
 
-import AbtSection from "@/components/sections/AbtSection";
+import AbtSection from "@/components/sections/Discover";
 import Chooseus from "@/components/sections/Chooseus";
-import Explore from "@/components/sections/Explore";
+import Explore from "@/components/sections/Offer";
 import Findpath from "@/components/sections/Findpath";
 import Navbar from "@/components/Navbar";
 import NewsLetter from "@/components/sections/NewsLetter";
@@ -10,6 +10,7 @@ import Stats from "@/components/sections/Stats";
 
 import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
+import Testimonial from "@/components/sections/Testimonial";
 export default function Home() {
   return (
     <>
@@ -21,6 +22,7 @@ export default function Home() {
       <Chooseus />
       <Findpath />
       <Team />
+      <Testimonial/>
       <NewsLetter />
       <Footer/>
     </>

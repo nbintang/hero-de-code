@@ -7,7 +7,7 @@ export async function fetchPhoto(endpoint: string) {
         Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
       },
     });
-    return response.data;
+    return response.data.urls.regular;
   } catch (error) {
     if(error instanceof Error) {
       console.error(error.message);

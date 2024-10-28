@@ -5,8 +5,6 @@ function Therapy(propsIcon: SVGProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="424"
-      height="266"
       fill="none"
       viewBox="0 0 424 266"
       {...propsIcon}

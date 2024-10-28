@@ -1,43 +1,37 @@
 import React from "react";
-import Image from "next/image";
-import { StarsIcon } from "lucide-react";
+import { Marquee } from "../ui/marquee";
+import TestimonialCard from "../TestimonialCard";
 
 export default function Testimonial() {
   return (
-    <section className="w-full bg-gray-100">
-      <div className="max-w-6xl mx-auto ">
+    <section className="w-full ">
+      <div className="max-w-6xl mx-auto mt-5">
         <div>
-          <h5 className="text-primary text-sm">Meet Our Team</h5>
-          <h1 className="text-5xl font-medium flex-[0_0_45%]">
-            Compassionate, Experienced, and Ready to Support You
-          </h1>
+          <h5 className="text-primary text-sm text-center lg:text-start ">
+            Testimonial
+          </h5>
+          <h2 className="text-2xl md:text-3xl font-semibold lg:text-5xl text-center lg:text-start">
+            What Our Patients Say
+          </h2>
         </div>
-        <div>
-          <div className="w-96 h-52 overflow-hidden rounded-md">
-            <Image
-              src={"/img/testimonial.jpg"}
-              alt="people"
-              width={200}
-              height={133}
-            />
-          </div>
-          <div className="flex flex-col gap-y-5">
-          <div className="space-y-1">
-              <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map((_, i) => (
-                  <StarsIcon key={i} />
-                ))}
-              </div>
-              <p>
-                &quot; Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                &quot;
-              </p>
-            </div>
-            <div>
-                <h5>Sarah Michael</h5>
-                <p>client</p>
-            </div>
-          </div>
+        <div className="relative flex  my-5 w-full flex-col items-center justify-center overflow-hidden rounded-lg ">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {[1, 2, 3, 4].map((i) => (
+              <TestimonialCard key={i} quote="Some testimonial quote" author="John Doe" role="Patient"/>
+            ))}
+          </Marquee>
+          <Marquee pauseOnHover reverse className="[--duration:20s]">
+            {[1, 2, 3, 4].map((i) => (
+              <TestimonialCard key={i} quote="Some testimonial quote" author="John Doe" role="Patient" />
+            ))}
+          </Marquee>
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {[1, 2, 3, 4].map((i) => (
+              <TestimonialCard key={i} quote="Some testimonial quote" author="John Doe" role="Patient" />
+            ))}
+          </Marquee>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
         </div>
       </div>
     </section>

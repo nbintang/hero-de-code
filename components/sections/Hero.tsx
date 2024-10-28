@@ -33,8 +33,8 @@ export default async function Hero() {
           <div className="col-span-7 h-full">
             {images[1] ? (
               <Image
-                src={images[1].urls.regular}
-                alt={images[1].alt_description || "hero"}
+                src={images[1]}
+                alt={"hero"}
                 width={400}
                 height={240}
                 className="object-cover shadow w-full h-full rounded-2xl"
@@ -46,8 +46,8 @@ export default async function Hero() {
           <div className="col-span-5 h-full">
             {images[4] ? (
               <Image
-                src={images[4].urls.regular}
-                alt={images[4].alt_description || "hero"}
+                src={images[4]}
+                alt={"hero"}
                 width={300}
                 height={240}
                 className="object-cover shadow w-full h-full rounded-2xl"
@@ -61,8 +61,8 @@ export default async function Hero() {
           <div className="col-span-5 h-full">
             {images[2] ? (
               <Image
-                src={images[2].urls.regular}
-                alt={images[2].alt_description || "hero"}
+                src={images[2]}
+                alt={"hero"}
                 width={300}
                 height={240}
                 className="object-cover shadow w-full h-full rounded-2xl"
@@ -74,8 +74,8 @@ export default async function Hero() {
           <div className="col-span-7 h-full">
             {images[3] ? (
               <Image
-                src={images[3].urls.regular}
-                alt={images[3].alt_description || "hero"}
+                src={images[3]}
+                alt={"hero"}
                 width={400}
                 height={240}
                 className="object-cover shadow w-full h-full rounded-2xl"
