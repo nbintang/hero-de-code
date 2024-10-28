@@ -1,6 +1,7 @@
 import React from "react";
 import AvatarPersonCard from "../AvatarPersonCard";
 import createData from "@/data/createData";
+import { BlurFade } from "../ui/blur-fade";
 export default async function Team() {
   const people = await createData();
   return (
@@ -22,7 +23,9 @@ export default async function Team() {
       </div>
       <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-y-9 gap-x-5 mt-10">
         {people.map((person, i) => (
-          <AvatarPersonCard key={i} {...person} />
+          <BlurFade key={i} delay={i * 0.1} inView>
+            <AvatarPersonCard {...person} />
+          </BlurFade>
         ))}
       </div>
     </section>

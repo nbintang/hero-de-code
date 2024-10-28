@@ -1,11 +1,12 @@
 import React from "react";
-import { BriefcaseMedical, LayoutGrid, Lock } from "lucide-react";
 import HumanMind from "../svg/HumanMind";
-
+import { FaLock as Lock } from "react-icons/fa";
+import { FaBriefcaseMedical as BriefcaseMedical } from "react-icons/fa6";
+import { TbLayoutGridFilled as LayoutGrid  } from "react-icons/tb";
 export default function Chooseus() {
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="flex flex-col  mx-5  py-10">
+    <div className="max-w-6xl mx-auto py-14">
+      <div className="flex flex-col  mx-5  ">
         <div className="flex md:flex-row flex-col justify-between items-center text-center md:text-start gap-5">
           <div className="md:w-1/2">
             <p className="text-primary text-sm">Why Choose Us</p>

@@ -17,7 +17,7 @@ const NewsLetter = () => {
 
      
       <div className="mr-0 mt-8 md:mt-0">
-        <Button className="px-20 py-2 text-white shadow-lg">
+        <Button variant={"secondary"} className="px-20 py-2 text-white shadow-lg">
           Schedule
         </Button>
       </div>

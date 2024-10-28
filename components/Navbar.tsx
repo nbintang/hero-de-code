@@ -3,6 +3,8 @@ import { HospitalIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
+import SlideTabs from "./ui/slide-tabs";
+import Header from "./ui/mobile-nav";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,30 +21,16 @@ export default function Navbar() {
     <nav className="w-full fix">
       <div className="px-4 sm:px-6 lg:px-4">
         <div className="flex max-w-6xl mx-auto items-center justify-between h-16">
-        <div className="flex items-center space-x-2">
-        <HospitalIcon/>
-            <h2 className="text-xl font-bold hidden md:inline-block">Serenity Haven Wellness</h2>
+          <div className="flex items-center space-x-2">
+            <HospitalIcon />
+            <h2 className="text-xl font-bold hidden md:inline-block">
+              Serenity Haven Wellness
+            </h2>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.slice(0, -1).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <div className="hidden md:block">
-            <Link
-              href={navLinks[4].href}
-              className="bg-[#FFBF99] text-white hover:bg-[#f8a080] px-5 py-2 rounded-md text-sm font-medium transition-colors duration-200 shadow-sm"
-            >
-              {navLinks[4].label}
-            </Link>
+            <SlideTabs />
           </div>
 
           {/* Mobile menu button */}
@@ -61,6 +49,10 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* <div className="md:hidden">
+  
+  <Header/>
+  </div> */}
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden">
