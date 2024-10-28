@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import AosLayout from "@/components/AosLayout";
-import WhatsApp from "@/components/svg/WhatsApp";
+import FloatingActionButton from "@/components/FloatingActionsButton";
+import { Toaster } from "react-hot-toast";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -33,10 +34,10 @@ export default function RootLayout({
           <div className="flex flex-col relative min-h-[100dvh] overflow-x-hidden">
             <div className="flex flex-col flex-1  ">
               {children}
-              <div className="w-14 h-14 lg:w-20 lg:h-20 fixed bottom-7 right-6">
-                <WhatsApp />
-              </div>
+                <FloatingActionButton />
+            
             </div>
+            <Toaster />
           </div>
         </AosLayout>
       </body>
