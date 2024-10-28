@@ -5,7 +5,7 @@ import { MoveRight } from "lucide-react";
 
 export default function Findpath() {
   return (
-    <section className="w-full bg-tertiary py-10">
+    <section className="w-full bg-tertiary py-14">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
         <div className="grid m-3 items-center space-y-4 lg:  order-last mr-4 md:order-first grid-cols-2 col-span-2">
           <div className="col-span-2 ">
@@ -28,8 +28,7 @@ export default function Findpath() {
             </p>
             <button
               className="text-primary hover:underline flex gap-3 py-2 items-center text-xs md:text-sm"
-             
-             
+
             >
               <p>Read More</p>
               <MoveRight className="w-4 h-4" />
@@ -43,7 +42,7 @@ export default function Findpath() {
             </p>
             <button
               className="text-primary hover:underline flex gap-3 py-2 items-center text-xs md:text-sm"
-             
+
             >
               <p>Read More</p>
               <MoveRight className="w-4 h-4" />

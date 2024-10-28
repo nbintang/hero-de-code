@@ -17,7 +17,7 @@ export default function Explore() {
         </h1>
         <p className="font-medium mt-2 text-base lg:text-lg  text-muted-foreground text-[#4F4F4F]">
           We believe mental health is a journey, and every journey
-          <br />
+          <br className="hidden md:block" />
           deserves personalized guidance.
         </p>
       </div>
