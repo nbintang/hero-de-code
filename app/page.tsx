@@ -12,6 +12,8 @@ import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
 import Testimonial from "@/components/sections/Testimonial";
 import Locations from "@/components/sections/Locations";
+import Question from "@/components/sections/Question";
+
 export default function Home() {
   return (
     <>
@@ -26,6 +28,7 @@ export default function Home() {
       <Locations />
       <Testimonial />
       <NewsLetter />
+      <Question/>
       <Footer />
     </>
   );
