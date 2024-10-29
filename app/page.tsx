@@ -7,12 +7,13 @@ import Findpath from "@/components/sections/Findpath";
 import Navbar from "@/components/Navbar";
 import NewsLetter from "@/components/sections/NewsLetter";
 import Stats from "@/components/sections/Stats";
-
 import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
 import Testimonial from "@/components/sections/Testimonial";
 import Locations from "@/components/sections/Locations";
 import AboutUs from "@/components/sections/AboutUs";
+import Question from "@/components/sections/Question";
+
 export default function Home() {
   return (
     <>
@@ -28,6 +29,7 @@ export default function Home() {
       <Locations />
       <Testimonial />
       <NewsLetter />
+      <Question />
       <Footer />
     </>
   );
