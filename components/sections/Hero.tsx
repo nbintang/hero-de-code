@@ -20,19 +20,21 @@ export default async function Hero() {
           <div className="space-y-2 text-center mt-4 md:mt-0 md:text-start mx-5 md:mx-0">
             <BlurFade delay={0.2 * 2} inView>
               <h1 className="text-3xl md:text-5xl font-semibold">
-                Lorem ipsum dolor sit amet consectetur.
+                Mental Health is Important
               </h1>
             </BlurFade>
             <BlurFade delay={0.2 * 3} inView>
               <p className="text-sm md:text-lg text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Facilis dignissimos a facere, voluptates optio sequi?
+                Based on a survey conducted by the Ministry of Health in 2018,
+                around 9.8% of the adolescent population (aged 15-24 years)
+                experienced emotional mental disorders, including depression and
+                anxiety.
               </p>
             </BlurFade>
           </div>
           <div>
             <BlurFade delay={0.2 * 4} inView>
-              <Button className="px-5 text-white">Book Appointment</Button>
+              <Button className="px-5 text-white">Find an Expert</Button>
             </BlurFade>
           </div>
         </div>
