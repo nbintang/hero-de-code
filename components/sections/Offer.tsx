@@ -11,14 +11,15 @@ export default function Explore() {
       <div className="text-center md:text-start ">
         <p className="text-primary text-sm">What We Offer</p>
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold">
-          Explore Our Comprehensive
+          Try Exploring
           <br />
-          Wellness Services
+          Some of our Services
         </h1>
         <p className="font-medium mt-2 text-base lg:text-lg  text-muted-foreground text-[#4F4F4F]">
-          According to research, around 50% of teenagers feel embarrassed to
+          We provide number 1 service to provide comfort and experience for you
+          in
           <br className="hidden md:block" />
-          admit that they experience mental health problems.
+          dealing with your mental health problems
         </p>
       </div>
 

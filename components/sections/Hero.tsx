@@ -23,6 +23,7 @@ export default async function Hero() {
                 Mental Health is Important
               </h1>
             </BlurFade>
+
             <BlurFade delay={0.2 * 3} inView>
               <p className="text-sm md:text-lg text-muted-foreground">
                 Based on a survey conducted by the Ministry of Health in 2018,
@@ -30,6 +31,7 @@ export default async function Hero() {
                 experienced emotional mental disorders, including depression and
                 anxiety.
               </p>
+
             </BlurFade>
           </div>
           <div>
