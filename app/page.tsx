@@ -11,6 +11,7 @@ import Stats from "@/components/sections/Stats";
 import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
 import Testimonial from "@/components/sections/Testimonial";
+import Locations from "@/components/sections/Locations";
 export default function Home() {
   return (
     <>
@@ -22,10 +23,10 @@ export default function Home() {
       <Chooseus />
       <Findpath />
       <Team />
-      <Testimonial/>
+      <Locations />
+      <Testimonial />
       <NewsLetter />
-      <Footer/>
-      
+      <Footer />
     </>
   );
 }
