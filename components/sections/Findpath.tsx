@@ -13,7 +13,7 @@ export default function Findpath() {
               Find Your Path to Inner Peace
             </h1>
             <p className="text-muted-foreground text-base lg:text-lg my-5 ">
-              At Serenity Haven Wellness, we offer a variety of therapeutic
+              At HeartCare, we offer a variety of therapeutic
               services designed to support your journey towards emotional
               well-being. Our experienced professionals are dedicated to helping
               you find the right path for your unique needs.

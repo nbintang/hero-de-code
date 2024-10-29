@@ -1,57 +1,58 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import * as React from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-  CarouselApi,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-export default function CarouselImg({ images }: { images: string[] }) {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
+import { AboutItem } from "@/data/dataAbout";
+import useCarousel from "@/hooks/useCarousel";
+export default function CarouselImg({ images }: { images: AboutItem[] }) {
+  const { plugin, api, setApi, current,  } = useCarousel();
   return (
     <>
-      <Carousel setApi={setApi} className="w-full">
+      <Carousel
+        plugins={[plugin.current]}
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        onMouseEnter={plugin.current.stop}
+        setApi={setApi}
+        className="w-full"
+      >
         <CarouselContent>
           {images.map((src, index) => (
             <CarouselItem key={index}>
               <Card className="border-0">
                 <CardContent className="p-0">
-                  <div className="relative pt-[56.25%]">
-                    {" "}
-                    {/* 16:9 aspect ratio */}
-                    <Image
-                      width={200}
-                      height={200}
-                      src={src}
-                      alt={`Slide ${index + 1}`}
-                      className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                    />
+                  <div className="relative pt-[72.25%] md:pt-[49.25%] lg:pt-[50.25%]  overflow-hidden rounded-3xl">
+                    <div className="absolute inset-0">
+                      <Image
+                        src={src.img}
+                        alt={`Slide ${index + 1}`}
+                        width={200}
+                        height={200}
+                        className=" object-cover object-center w-full h-full"
+                      />
+                    </div>
+                    <div className="bg-black/60 absolute inset-0 w-full h-full z-10 flex flex-col justify-end p-4">
+                      <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-2">
+                        {src.title}
+                      </h1>
+                      <p className="text-xs md:text-sm lg:text-base text-white/80 w-full md:w-3/4 overflow-hidden ">
+                        {src.description}
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
       <div className="flex justify-center mt-4">
         {images.map((_, index) => (
@@ -60,7 +61,7 @@ export default function CarouselImg({ images }: { images: string[] }) {
             variant="ghost"
             size="sm"
             className={`w-3 h-3 mx-1 p-0 rounded-full ${
-              index === current ? "bg-primary" : "bg-secondary"
+              index === current ? "bg-primary" : "bg-tertiary"
             }`}
             onClick={() => api?.scrollTo(index)}
           >

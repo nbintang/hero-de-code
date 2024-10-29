@@ -26,7 +26,7 @@ export default function TestimonialCard({
         <blockquote className="text-lg mb-4">&apos;{quote}&apos;</blockquote>
         <div className="flex items-center">
           <Avatar className="h-10 w-10 mr-4">
-            <AvatarImage src={avatarSrc} alt={author} />
+            <AvatarImage src={avatarSrc} alt={author} className="object-cover" />
             <AvatarFallback>{author ? getInitials(author) : 'U'}</AvatarFallback>
           </Avatar>
           <div>

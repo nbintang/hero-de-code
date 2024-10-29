@@ -5,7 +5,7 @@ import { FaBriefcaseMedical as BriefcaseMedical } from "react-icons/fa6";
 import { TbLayoutGridFilled as LayoutGrid  } from "react-icons/tb";
 export default function Chooseus() {
   return (
-    <div className="max-w-6xl mx-auto py-14" id="about">
+    <div className="max-w-6xl mx-auto py-14" >
       <div className="flex flex-col  mx-5  ">
         <div className="flex md:flex-row flex-col justify-between items-center text-center md:text-start gap-5">
           <div className="md:w-1/2">

@@ -54,7 +54,7 @@ export default function Navbar() {
             <div className="flex items-center space-x-2">
               <HospitalIcon className="text-primary" />
               <h2 className="text-xl font-bold hidden md:inline-block">
-                Serenity Haven Wellness
+               HeartCare
               </h2>
             </div>
 

@@ -37,7 +37,7 @@ export default function DrawerDialog() {
 
   return (
     <Drawer modal={false} open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-      <DrawerContent className="mb-5">
+      <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Consul with Us via Email</DrawerTitle>
           <DrawerDescription>
