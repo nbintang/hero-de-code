@@ -13,7 +13,7 @@ export async function fetchPhoto(endpoint: string) {
     );
     const data = await response.json();
 
-    return data.urls.regular;
+    return data.urls.raw;
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);

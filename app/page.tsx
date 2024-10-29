@@ -12,11 +12,13 @@ import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
 import Testimonial from "@/components/sections/Testimonial";
 import Locations from "@/components/sections/Locations";
+import AboutUs from "@/components/sections/AboutUs";
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
+      <AboutUs/>
       <Stats />
       <Explore />
       <AbtSection />

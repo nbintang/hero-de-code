@@ -41,7 +41,7 @@ const Chip: React.FC<ChipProps> = ({ text, selected, setSelected }) => {
       {selected && (
         <motion.span
           layoutId="pill-tab"
-          transition={{ type: "spring", duration: 0.5 }}
+          transition={{ type: "spring", duration: 0.2 }}
           className="absolute inset-0 z-0 bg-primary  rounded-md"
         />
       )}

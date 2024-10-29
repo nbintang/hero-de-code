@@ -18,16 +18,18 @@ export default async function Hero() {
       <section className="grid max-w-6xl mx-5 grid-cols-1 md:grid-cols-2 items-center">
         <div className="flex flex-col gap-5 md:gap-10 mx-auto order-last md:order-first items-center md:items-start">
           <div className="space-y-2 text-center mt-4 md:mt-0 md:text-start mx-5 md:mx-0">
-            <BlurFade delay={0.2 * 2} inView>
+          <BlurFade delay={0.2 * 2} inView>
               <h1 className="text-3xl md:text-5xl font-semibold">
-                Explore Our Comprehensive
-                <br />
-                Wellness Services
+                Mental Health is Important
               </h1>
             </BlurFade>
             <BlurFade delay={0.2 * 3} inView>
-              According to research, around 50% of teenagers feel embarrassed to
-              admit that they experience mental health problems.
+              <p className="text-sm md:text-lg text-muted-foreground">
+                Based on a survey conducted by the Ministry of Health in 2018,
+                around 9.8% of the adolescent population (aged 15-24 years)
+                experienced emotional mental disorders, including depression and
+                anxiety.
+              </p>
             </BlurFade>
           </div>
           <div>
