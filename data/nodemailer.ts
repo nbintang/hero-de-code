@@ -32,7 +32,6 @@ export async function sendEmail({
       from: process.env.NEXT_NODEMAILER_EMAIL,
       to,
       subject,
-      text,
       html: text,
     });
     return info;

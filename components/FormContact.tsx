@@ -16,8 +16,9 @@ import { LoaderCircleIcon } from "lucide-react";
 import { useActionFloatButtonContext } from "@/context/useActionFloatButtonContext";
 
 export default function FormEmail(props: React.ComponentProps<"form">) {
-  const { form, onSubmit, isLoading } = useSendEmail();
+  const { form, onSubmit, isLoading, handleNumberChange } = useSendEmail();
   const { setIsDrawerOpen } = useActionFloatButtonContext();
+
   return (
     <Form {...form}>
       <form onSubmit={onSubmit} className="space-y-8 mx-3" {...props}>
@@ -43,7 +44,26 @@ export default function FormEmail(props: React.ComponentProps<"form">) {
               <FormControl>
                 <Input placeholder="Enter your email" {...field} />
               </FormControl>
-
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="number"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone Number</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="Enter your number"
+                  {...field}
+                  onChange={(e) => {
+                    handleNumberChange(e);
+                    field.onChange(e); // retain form handling
+                  }}
+                />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
@@ -57,7 +77,7 @@ export default function FormEmail(props: React.ComponentProps<"form">) {
               <FormControl>
                 <Textarea placeholder="Enter your message" {...field} />
               </FormControl>
-              <FormDescription></FormDescription>
+              <FormDescription />
               <FormMessage />
             </FormItem>
           )}

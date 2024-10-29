@@ -40,8 +40,8 @@ export default async function Hero() {
         <div className="grid grid-cols-12 mx-5 grid-rows-2 order-first md:order-last gap-1 h-[300px] md:h-[500px]">
           {/* Top Row */}
           <div className="col-span-7 h-full">
-            {images ? (
-              <BlurFade delay={0.2 * 1} inView>
+            <BlurFade delay={0.2 * 1} inView>
+              {images ? (
                 <div className="w-full h-full relative">
                   <Image
                     src={images[1]}
@@ -50,14 +50,14 @@ export default async function Hero() {
                     className="object-cover shadow rounded-2xl"
                   />
                 </div>
-              </BlurFade>
-            ) : (
-              <Skeleton className="w-full h-full rounded-2xl" />
-            )}
+              ) : (
+                <Skeleton className="w-full h-full bg-black rounded-2xl" />
+              )}
+            </BlurFade>
           </div>
           <div className="col-span-5 h-full">
-            {images ? (
-              <BlurFade delay={0.2 * 2} inView>
+            <BlurFade delay={0.2 * 2} inView>
+              {images ? (
                 <div className="w-full h-full relative">
                   <Image
                     src={images[4]}
@@ -66,16 +66,16 @@ export default async function Hero() {
                     className="object-cover shadow rounded-2xl"
                   />
                 </div>
-              </BlurFade>
-            ) : (
-              <Skeleton className="w-full h-full rounded-2xl" />
-            )}
+              ) : (
+                <Skeleton className="w-full h-full rounded-2xl" />
+              )}
+            </BlurFade>
           </div>
 
           {/* Bottom Row */}
           <div className="col-span-5 h-full">
-            {images ? (
-              <BlurFade delay={0.2 * 3} inView>
+            <BlurFade delay={0.2 * 3} inView>
+              {images ? (
                 <div className="w-full h-full relative">
                   <Image
                     src={images[2]}
@@ -84,14 +84,14 @@ export default async function Hero() {
                     className="object-cover shadow rounded-2xl"
                   />
                 </div>
-              </BlurFade>
-            ) : (
-              <Skeleton className="w-full h-full rounded-2xl" />
-            )}
+              ) : (
+                <Skeleton className="w-full h-full rounded-2xl" />
+              )}
+            </BlurFade>
           </div>
           <div className="col-span-7 h-full">
-            {images ? (
-              <BlurFade delay={0.2 * 4} inView>
+            <BlurFade delay={0.2 * 4} inView>
+              {images ? (
                 <div className="w-full h-full relative">
                   <Image
                     src={images[3]}
@@ -100,10 +100,10 @@ export default async function Hero() {
                     className="object-cover shadow rounded-2xl"
                   />
                 </div>
-              </BlurFade>
-            ) : (
-              <Skeleton className="w-full h-full rounded-2xl" />
-            )}
+              ) : (
+                <Skeleton className="w-full h-full rounded-2xl" />
+              )}
+            </BlurFade>
           </div>
         </div>
       </section>
