@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AbtSection = () => {
   return (
-    <section className="w-full bg-gray-100">
+    <section className="w-full bg-tertiary">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="flex flex-col gap-8 items-center md:flex-row">
           {/* Image Section */}

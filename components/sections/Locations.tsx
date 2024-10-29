@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import Maps from "../Maps";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { Skeleton } from "../ui/skeleton";
 
 export default function Locations() {
   return (
@@ -22,13 +21,13 @@ export default function Locations() {
             and we will provide the best solution.
           </p>
         </div>
-        <div className="overflow-hidden  mt-9 rounded-2xl shadow sm:aspect-video lg:w-full aspect-square h-96 ">
           <Suspense
-            fallback={<Skeleton className="w-full h-full object-cover" />}
+            fallback={<div className="w-full h-full object-cover rounded-2xl aspect-video">Loading...</div>}
           >
+        <div className="overflow-hidden  mt-9 rounded-2xl shadow sm:aspect-video lg:w-full aspect-square h-96 ">
             <Maps className="w-full h-full  object-cover" />
-          </Suspense>
         </div>
+          </Suspense>
         <Link
           href="https://www.google.com/maps/place/MargoCity/@-6.3727938,106.8412985,15z"
           target="_blank"

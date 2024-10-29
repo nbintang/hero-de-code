@@ -25,7 +25,7 @@ export default function DrawerDialog() {
       <Dialog open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Contact Us via Email</DialogTitle>
+            <DialogTitle>Consul Us via Email</DialogTitle>
             <DialogDescription>
               Send us a message and we&lsquo;ll get back to you soon.
             </DialogDescription>
@@ -37,9 +37,9 @@ export default function DrawerDialog() {
 
   return (
     <Drawer modal={false} open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-      <DrawerContent>
+      <DrawerContent className="mb-5">
         <DrawerHeader>
-          <DrawerTitle>Contact Us via Email</DrawerTitle>
+          <DrawerTitle>Consul with Us via Email</DrawerTitle>
           <DrawerDescription>
             Send us a message and we&lsquo;ll get back to you soon.
           </DrawerDescription>

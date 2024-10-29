@@ -1,6 +1,7 @@
 "use client";
+import { motion } from "framer-motion";
 import { HospitalIcon, Mail } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import SlideTabs from "./ui/slide-tabs";
 import {
@@ -23,16 +24,31 @@ const tabs = [
   { href: "#services", label: "Our Service" },
   { href: "#appointments", label: "Appointments" },
 ];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const { setIsDrawerOpen } = useActionFloatButtonContext();
   const whatsappUrl = useContactWA();
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <nav className="w-full fixed top-0 z-50">
+      <motion.nav
+        className="w-full fixed top-0 z-50"
+        initial={{ backdropFilter: "blur(0px)", opacity: 1 }}
+        animate={{
+          backdropFilter: scrollY > 0 ? "blur(10px)" : "blur(0px)",
+          backgroundColor: scrollY > 0 ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0)",
+          transition: { duration: 0.3 },
+        }}
+      >
         {/* Blur effect background */}
-        <div className="absolute inset-0 bg-white/70 backdrop-blur-md border-b border-gray-200" />
-
         <div className="relative px-4 sm:px-6 lg:px-4">
           <div className="flex max-w-6xl mx-auto items-center justify-between h-16">
             <div className="flex items-center space-x-2">
@@ -62,7 +78,8 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
+
       {/* Mobile Sheet */}
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetContent side="right" className="flex flex-col justify-between">
@@ -89,7 +106,7 @@ export default function Navbar() {
           <SheetFooter>
             <div className="flex flex-col gap-y-2 text-white">
               <SheetHeader className="text-start">
-                <SheetTitle>Contact</SheetTitle>
+                <SheetTitle>Consult with us</SheetTitle>
                 <SheetDescription>
                   Quick links to different sections of our website.
                 </SheetDescription>
@@ -102,7 +119,7 @@ export default function Navbar() {
                 <p>Email</p>
               </Button>
               <Link
-                className=""
+                className="w-full"
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
