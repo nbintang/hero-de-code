@@ -7,7 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 
 export default function Explore() {
   return (
-    <div className="container md:max-w-6xl mx-auto px-4 py-10">
+    <div className="container md:max-w-6xl mx-auto px-4 py-10" id={"services"}>
       <div className="text-center md:text-start ">
         <p className="text-primary text-sm">What We Offer</p>
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold">

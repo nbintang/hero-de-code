@@ -9,20 +9,22 @@ import {
 
 export default function Question() {
   return (
-    <div className="text-center container md:max-w-6xl mx-auto px-4 py-28">
-      <div className="flex flex-col md:flex-row md:gap-5 items-center ">
-        <div className="md:text-start">
-          <p className="text-primary text-sm my-2">Questions</p>
-          <BlurFade>
-            <h1 className="text-3xl font-semibold lg:text-5xl text-start">
-              Questions You Might Ask
-            </h1>
-          </BlurFade>
+    <div className="text-center container md:max-w-6xl mx-auto px-4 py-28" id={"questions"}>
+      <div className="lg:grid-cols-2 mx-3 md:mx-0 grid gap-4 items-center grid-cols-1 ">
+        <div>
+          <h5 className="text-primary text-sm text-center lg:text-start ">
+            FAQ{"'"}s
+          </h5>
+          <h2 className="text-2xl md:text-3xl font-semibold lg:text-5xl text-center lg:text-start">
+            Most Commonly Asked Question{"'"}s
+          </h2>
         </div>
-        <BlurFade delay={0.2 * 3} inView className="text-muted-foreground mt-5  ">
-          find common questions you might ask
-        </BlurFade>
+        <p className="text-base ml-5 lg:text-lg  text-muted-foreground text-center lg:text-start ">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+          exercitationem! Praesentium quisquam ratione nemo.
+        </p>
       </div>
+
       <div className="flex flex-col mx-auto md:flex-row md:gap-10 mt-5">
         <div className="w-full">
           <Accordion type="single" collapsible className="w-full">

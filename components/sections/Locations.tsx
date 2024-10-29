@@ -1,11 +1,13 @@
 import React, { Suspense } from "react";
-import Maps from "../Maps";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Maps = dynamic(() => import("@/components/Maps"), { ssr: false });
 
 export default function Locations() {
   return (
-    <div className="w-full">
+    <div className="w-full" id={"locations"}>
       <div className="max-w-6xl flex flex-col items-center py-9 mx-auto mt-5">
         <div className="lg:grid-cols-2 mx-3 md:mx-0 grid gap-4 items-center grid-cols-1 ">
           <div>
@@ -21,13 +23,17 @@ export default function Locations() {
             and we will provide the best solution.
           </p>
         </div>
-          <Suspense
-            fallback={<div className="w-full h-full object-cover rounded-2xl aspect-video">Loading...</div>}
-          >
-        <div className="overflow-hidden  mt-9 rounded-2xl shadow sm:aspect-video lg:w-full aspect-square h-96 ">
+        <Suspense
+          fallback={
+            <div className="w-full h-full object-cover rounded-2xl aspect-video">
+              Loading...
+            </div>
+          }
+        >
+          <div className="overflow-hidden  mt-9 rounded-2xl shadow sm:aspect-video lg:w-full aspect-square h-96 ">
             <Maps className="w-full h-full  object-cover" />
-        </div>
-          </Suspense>
+          </div>
+        </Suspense>
         <Link
           href="https://www.google.com/maps/place/MargoCity/@-6.3727938,106.8412985,15z"
           target="_blank"

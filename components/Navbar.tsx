@@ -21,8 +21,10 @@ import useContactWA from "@/hooks/useContactWA";
 const tabs = [
   { href: "#hero", label: "Home" },
   { href: "#about", label: "About Us" },
-  { href: "#services", label: "Our Service" },
-  { href: "#appointments", label: "Appointments" },
+  { href: "#services", label: "Our Service's" },
+  { href: "#appointments", label: "Appointment's" },
+  { href: "#questions", label: "FAQ's" },
+  { href: "#locations", label: " Location's" },
 ];
 
 export default function Navbar() {
@@ -44,7 +46,8 @@ export default function Navbar() {
         initial={{ backdropFilter: "blur(0px)", opacity: 1 }}
         animate={{
           backdropFilter: scrollY > 0 ? "blur(10px)" : "blur(0px)",
-          backgroundColor: scrollY > 0 ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0)",
+          backgroundColor:
+            scrollY > 0 ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0)",
           transition: { duration: 0.3 },
         }}
       >
@@ -54,7 +57,7 @@ export default function Navbar() {
             <div className="flex items-center space-x-2">
               <HospitalIcon className="text-primary" />
               <h2 className="text-xl font-bold hidden md:inline-block">
-               HeartCare
+                HeartCare
               </h2>
             </div>
 
@@ -85,7 +88,7 @@ export default function Navbar() {
         <SheetContent side="right" className="flex flex-col justify-between">
           <div className="space-y-3">
             <SheetHeader className="text-start">
-              <SheetTitle>Navigation</SheetTitle>
+              <SheetTitle>HeartCare</SheetTitle>
               <SheetDescription>
                 Quick links to different sections of our website.
               </SheetDescription>
@@ -108,7 +111,7 @@ export default function Navbar() {
               <SheetHeader className="text-start">
                 <SheetTitle>Consult with us</SheetTitle>
                 <SheetDescription>
-                  Quick links to different sections of our website.
+                  Consul with us right now through this contact below
                 </SheetDescription>
               </SheetHeader>
               <Button
