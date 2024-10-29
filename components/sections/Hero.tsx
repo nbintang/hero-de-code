@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { fetchPhoto } from "@/data/getPhoto";
@@ -42,70 +42,82 @@ export default async function Hero() {
         <div className="grid grid-cols-12 mx-5 grid-rows-2 order-first md:order-last gap-1 h-[300px] md:h-[500px]">
           {/* Top Row */}
           <div className="col-span-7 h-full">
-            <BlurFade delay={0.2 * 1} inView>
-              {images ? (
+            <Suspense
+              fallback={
+                <Skeleton className="w-full h-full relative rounded-2xl" />
+              }
+            >
+              <BlurFade delay={0.2 * 1} inView>
                 <div className="w-full h-full relative">
                   <Image
                     src={images[1]}
                     alt="hero"
-                    fill
-                    className="object-cover shadow rounded-2xl"
+                    width={200}
+                    height={200}
+                    className="object-cover shadow w-full h-full rounded-2xl"
                   />
                 </div>
-              ) : (
-                <Skeleton className="w-full h-full bg-black rounded-2xl" />
-              )}
-            </BlurFade>
+              </BlurFade>
+            </Suspense>
           </div>
           <div className="col-span-5 h-full">
-            <BlurFade delay={0.2 * 2} inView>
-              {images ? (
+            <Suspense
+              fallback={
+                <Skeleton className="w-full h-full relative rounded-2xl" />
+              }
+            >
+              <BlurFade delay={0.2 * 2} inView>
                 <div className="w-full h-full relative">
                   <Image
                     src={images[4]}
                     alt="hero"
-                    fill
-                    className="object-cover shadow rounded-2xl"
+                    width={200}
+                    height={200}
+                    className="object-cover w-full h-full shadow rounded-2xl"
                   />
                 </div>
-              ) : (
-                <Skeleton className="w-full h-full rounded-2xl" />
-              )}
-            </BlurFade>
+              </BlurFade>
+            </Suspense>
           </div>
 
           {/* Bottom Row */}
           <div className="col-span-5 h-full">
-            <BlurFade delay={0.2 * 3} inView>
-              {images ? (
-                <div className="w-full h-full relative">
+            <Suspense
+              fallback={
+                <Skeleton className="w-full h-full rounded-2xl relative" />
+              }
+            >
+              <BlurFade delay={0.2 * 3} inView>
+                <div className="w-full h-full  relative">
                   <Image
                     src={images[2]}
                     alt="hero"
-                    fill
-                    className="object-cover shadow rounded-2xl"
+                    width={200}
+                    height={200}
+                    className="object-cover w-full h-full  shadow rounded-2xl"
                   />
                 </div>
-              ) : (
-                <Skeleton className="w-full h-full rounded-2xl" />
-              )}
-            </BlurFade>
+              </BlurFade>
+            </Suspense>
           </div>
           <div className="col-span-7 h-full">
-            <BlurFade delay={0.2 * 4} inView>
-              {images ? (
+            <Suspense
+              fallback={
+                <Skeleton className="w-full h-full rounded-2xl relative" />
+              }
+            >
+              <BlurFade delay={0.2 * 4} inView>
                 <div className="w-full h-full relative">
                   <Image
                     src={images[3]}
                     alt="hero"
-                    fill
-                    className="object-cover shadow rounded-2xl"
+                    width={200}
+                    height={200}
+                    className="object-cover w-full h-full shadow rounded-2xl"
                   />
                 </div>
-              ) : (
-                <Skeleton className="w-full h-full rounded-2xl" />
-              )}
-            </BlurFade>
+              </BlurFade>
+            </Suspense>
           </div>
         </div>
       </section>
