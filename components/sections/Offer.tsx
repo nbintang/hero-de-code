@@ -16,19 +16,19 @@ export default function Explore() {
           Wellness Services
         </h1>
         <p className="font-medium mt-2 text-base lg:text-lg  text-muted-foreground text-[#4F4F4F]">
-          We believe mental health is a journey, and every journey
+          According to research, around 50% of teenagers feel embarrassed to
           <br className="hidden md:block" />
-          deserves personalized guidance.
+          admit that they experience mental health problems.
         </p>
       </div>
-      
+
       <div className="grid grid-cols-1 my-12 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]">
         <Card className="bg-tertiary relative h-full flex flex-col min-w-[335px]">
           <CardHeader>
             <h1 className="text-xl md:text-2xl">
-              Personalized Mental
+              Mindfulness & Stress
               <br />
-              Health Plans
+              Management Workshops
             </h1>
           </CardHeader>
           <CardContent className="flex-grow">

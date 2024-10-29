@@ -17,8 +17,8 @@ export default function Locations() {
             </h2>
           </div>
           <p className="text-base ml-5 lg:text-lg  text-muted-foreground text-center lg:text-start ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-            error similique deleniti tempora asperiores.
+            Meet us whenever you need us, we serve 24/7 the problems you face
+            and we will provide the best solution.
           </p>
         </div>
         <div className="overflow-hidden  mt-9 rounded-2xl shadow sm:aspect-video lg:w-full aspect-square h-96 ">
