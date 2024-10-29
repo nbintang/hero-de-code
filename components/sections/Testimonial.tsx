@@ -17,7 +17,7 @@ export default async function Testimonial() {
           </h2>
         </div>
         <div className="relative flex  my-5 w-full flex-col items-center justify-center overflow-hidden rounded-lg ">
-          <Marquee pauseOnHover className="[--duration:20s]">
+          <Marquee pauseOnHover className="[--duration:30s]">
             {data.map((item, i) => (
               <TestimonialCard
                 key={i}
@@ -28,7 +28,7 @@ export default async function Testimonial() {
               />
             ))}
           </Marquee>
-          <Marquee pauseOnHover reverse className="[--duration:20s]">
+          <Marquee pauseOnHover reverse className="[--duration:30s]">
             {data.map((item, i) => (
               <TestimonialCard
                 key={i}
@@ -39,7 +39,7 @@ export default async function Testimonial() {
               />
             ))}
           </Marquee>
-          <Marquee pauseOnHover className="[--duration:20s]">
+          <Marquee pauseOnHover className="[--duration:30s]">
             {data.map((item, i) => (
               <TestimonialCard
                 key={i}

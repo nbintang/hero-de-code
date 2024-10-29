@@ -25,7 +25,7 @@ export default async function Hero() {
                 Wellness Services
               </h1>
             </BlurFade>
-            <BlurFade delay={0.2 * 3} inView>
+            <BlurFade delay={0.2 * 3} inView className="text-[#4F4F4F]">
               According to research, around 50% of teenagers feel embarrassed to
               admit that they experience mental health problems.
             </BlurFade>
