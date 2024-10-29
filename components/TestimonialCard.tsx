@@ -13,7 +13,7 @@ export default function TestimonialCard({
   quote = "This product has completely transformed our workflow. It's intuitive, powerful, and a joy to use every day.",
   author = "Alex Johnson",
   role = "Product Manager",
-  avatarSrc = "/placeholder.svg?height=40&width=40"
+  avatarSrc
 }: TestimonialCardProps) {
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').toUpperCase()
