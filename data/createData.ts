@@ -1,48 +1,46 @@
 import { fetchPhoto } from "./getPhoto";
 
 export default async function createData() {
-  const data = [
+  const dataDetails = [
+    { id: "tB5ZZtHZ_tI", name: "Sam Sulek", speciality: "CEO & Psychologist" },
+    { id: "ezgW6z6oIvA", name: "David Bjorka", speciality: "Child Psychology" },
     {
-      img: await fetchPhoto("tB5ZZtHZ_tI"),
-      name: "Sam Sulek",
-      speciality: "CEO & Psychologist",
-    },
-    {
-      img: await fetchPhoto("ezgW6z6oIvA"),
-      name: "David Bjorka",
-      speciality: "Child Psychology",
-    },
-    {
-      img: await fetchPhoto("VVEwJJRRHgk"),
+      id: "VVEwJJRRHgk",
       name: "Januar Ghifari",
       speciality: "Behavioral Therapy",
     },
     {
-      img: await fetchPhoto("NoRsyXmHGpI"),
+      id: "NoRsyXmHGpI",
       name: "Alexa Stjokovic",
       speciality: "Marriage and Family Therapy",
     },
+    { id: "j5almO1E8rU", name: "Mellisa", speciality: "Trauma Counseling" },
     {
-      img: await fetchPhoto("j5almO1E8rU"),
-      name: "Mellisa",
-      speciality: "Trauma Counseling",
-    },
-    {
-      img: await fetchPhoto("or6mrFMVmHM"),
+      id: "or6mrFMVmHM",
       name: "Qing Liu",
       speciality: "Cognitive Behavioral Therapy",
     },
     {
-      img: await fetchPhoto("ge0OfJkVOxY"),
+      id: "ge0OfJkVOxY",
       name: "Blake Lively",
       speciality: "Addiction Counseling",
     },
     {
-      img: await fetchPhoto("MwPZLyGaA88"),
+      id: "MwPZLyGaA88",
       name: "Clara Marsya",
       speciality: "Anxiety and Depression Counseling",
     },
   ];
+
+  const images = await Promise.all(
+    dataDetails.map((item) => fetchPhoto(item.id))
+  );
+
+  const data = dataDetails.map((item, index) => ({
+    img: images[index],
+    name: item.name,
+    speciality: item.speciality,
+  }));
 
   return data;
 }
