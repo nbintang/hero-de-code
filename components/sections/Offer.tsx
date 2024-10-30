@@ -24,7 +24,7 @@ export default function Explore() {
       </div>
 
       <div className="grid grid-cols-1 my-12 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]">
-        <Card className="bg-tertiary relative h-full flex flex-col min-w-[335px]">
+        <Card data-aos="fade-up" data-aos-duration="800" className="bg-tertiary relative h-full flex flex-col min-w-[335px]">
           <CardHeader>
             <h1 className="text-xl md:text-2xl">
               Mindfulness & Stress
@@ -44,7 +44,7 @@ export default function Explore() {
           </CardFooter>
         </Card>
 
-        <Card className="bg-primary/50 relative h-full flex flex-col min-w-[335px]">
+        <Card data-aos="fade-up" data-aos-duration="700" className="bg-primary/50 relative h-full flex flex-col min-w-[335px]">
           <CardHeader>
             <h1 className="text-xl md:text-2xl">
               Personalized Mental
@@ -64,7 +64,7 @@ export default function Explore() {
           </CardFooter>
         </Card>
 
-        <Card className="bg-secondary/50 relative h-full flex flex-col min-w-[335px]">
+        <Card data-aos="fade-up" data-aos-duration="600" className="bg-secondary/50 relative h-full flex flex-col min-w-[335px]">
           <CardHeader>
             <h1 className="text-xl md:text-2xl">
               Holistic Healing

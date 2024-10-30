@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 
 export default function AosLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    AOS.init();
+    AOS.init({ once: true });
   }, []);
   return <div>{children}</div>;
 }

@@ -28,7 +28,7 @@ export default function Findpath() {
               Personalized sessions to address your emotional challenges and
               promote self-discovery.
             </p>
-            <button className="text-primary border border-primary px-2 rounded-full hover:underline flex gap-3 py-2 items-center text-xs md:text-sm">
+            <button data-aos="fade-right" className="text-primary border border-primary px-2 rounded-full hover:underline flex gap-3 py-2 items-center text-xs md:text-sm">
               <p>Read More</p>
               <MoveRight className="w-4 h-4" />
             </button>
@@ -40,14 +40,17 @@ export default function Findpath() {
               Strengthen your relationship with effective communication and
               conflict resolution strategies.
             </p>
-            <button className="text-primary border border-primary px-2 rounded-full hover:underline flex gap-3 py-2 items-center text-xs md:text-sm">
+            <button data-aos="fade-right" className="text-primary border border-primary px-2 rounded-full hover:underline flex gap-3 py-2 items-center text-xs md:text-sm">
               <p>Read More</p>
               <MoveRight className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        <Card className="bg-primary/70 order-first m-3 lg:order-last col-span-3 md:col-span-1 relative overflow-hidden md:overflow-auto aspect-video md:aspect-video lg:aspect-square  ">
+        <Card
+          data-aos="fade-up"
+          className="bg-primary/70 order-first m-3 lg:order-last col-span-3 md:col-span-1 relative overflow-hidden md:overflow-auto aspect-video md:aspect-video lg:aspect-square  "
+        >
           <CardContent>
             <div className="absolute w-full left-0 bottom-0 ">
               <Therapy className="" />

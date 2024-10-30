@@ -7,10 +7,10 @@ import { BlurFade } from "../ui/blur-fade";
 
 export default async function Hero() {
   const images = {
-    1: await fetchPhoto("1bP7z_UOwl4"),
+    1: await fetchPhoto("AhfrA5VQNpM"),
     2: await fetchPhoto("FpdoHOjzaOM"),
-    3: await fetchPhoto("seUxMX-DhAQ"),
-    4: await fetchPhoto("5XVw43ET01s"),
+    3: await fetchPhoto("GM5Yn5XRVqA"),
+    4: await fetchPhoto("0QP2i5QzGBk"),
   };
 
   return (

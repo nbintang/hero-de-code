@@ -1,14 +1,61 @@
-import React from "react";
+"use client";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import L from "leaflet";
+import { MapPin } from "lucide-react";
+import ReactDOMServer from "react-dom/server";
+import "leaflet/dist/leaflet.css";
 
-export default function Maps(props: React.HTMLAttributes<HTMLIFrameElement>) {
+const MapContainer = dynamic(
+  () => import("react-leaflet").then((mod) => mod.MapContainer),
+  { ssr: false }
+);
+const TileLayer = dynamic(
+  () => import("react-leaflet").then((mod) => mod.TileLayer),
+  { ssr: false }
+);
+const Marker = dynamic(
+  () => import("react-leaflet").then((mod) => mod.Marker),
+  { ssr: false }
+);
+const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), {
+  ssr: false,
+});
+
+const customIcon = new L.DivIcon({
+  html: ReactDOMServer.renderToString(<MapPin color="red" size={24} />),
+  className: "",
+  iconSize: [24, 24],
+  iconAnchor: [12, 24],
+});
+
+export default function Maps() {
+  const position: [number, number] = [-6.3727938, 106.8412985];
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
   return (
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.656731070383!2d106.84129850094595!3d-6.372793799026745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec093dabf58d:0xd3365350a2ebe2f!2sMargoCity!5e0!3m2!1sid!2sid!4v1730163401341!5m2!1sid!2sid"
-      allowFullScreen
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-      title="Google Map of MargoCity"
-      {...props}
-    />
+    <MapContainer
+      center={position}
+      zoom={13}
+      style={{ height: "100%", width: "100%" }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker position={position} icon={customIcon}>
+        <Popup>
+          Latitude: {position[0]}
+          <br />
+          Longitude: {position[1]}
+        </Popup>
+      </Marker>
+    </MapContainer>
   );
 }

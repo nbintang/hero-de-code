@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AboutItem } from "@/data/dataAbout";
+import { AboutItem } from "@/data/aboutData";
 import useCarousel from "@/hooks/useCarousel";
 export default function CarouselImg({ images }: { images: AboutItem[] }) {
   const { plugin, api, setApi, current,  } = useCarousel();

@@ -1,6 +1,6 @@
 import React from "react";
 import CarouselImg from "../CarouselImg";
-import dataAbout from "@/data/dataAbout";
+import dataAbout from "@/data/aboutData";
 
 export default async function AboutUs() {
   const images = await dataAbout();

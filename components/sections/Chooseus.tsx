@@ -2,10 +2,10 @@ import React from "react";
 import HumanMind from "../svg/HumanMind";
 import { FaLock as Lock } from "react-icons/fa";
 import { FaBriefcaseMedical as BriefcaseMedical } from "react-icons/fa6";
-import { TbLayoutGridFilled as LayoutGrid  } from "react-icons/tb";
+import { TbLayoutGridFilled as LayoutGrid } from "react-icons/tb";
 export default function Chooseus() {
   return (
-    <div className="max-w-6xl mx-auto py-14" >
+    <div className="max-w-6xl mx-auto py-14">
       <div className="flex flex-col  mx-5  ">
         <div className="flex md:flex-row flex-col justify-between items-center text-center md:text-start gap-5">
           <div className="md:w-1/2">
@@ -23,7 +23,11 @@ export default function Chooseus() {
           </div>
         </div>
         <div className="grid mt-10 grid-cols-1 md:grid-cols-2 gap-10 mx-5 md:mx-0">
-          <div className="flex flex-col ">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="flex flex-col "
+          >
             <div className=" flex flex-col items-center md:items-start mb-3 md:mb-5">
               <LayoutGrid className="text-primary w-10 h-10" />
               <h1 className="text-lg md:text-xl  text-center">
@@ -36,7 +40,11 @@ export default function Chooseus() {
             </p>
           </div>
 
-          <div className="flex flex-col  ">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            className="flex flex-col  "
+          >
             <div className="flex flex-col items-center md:items-start mb-3 md:mb-5">
               <BriefcaseMedical className="text-primary w-10 h-10" />
               <h1 className="text-lg md:text-xl  text-center">
@@ -49,7 +57,11 @@ export default function Chooseus() {
               terms.
             </p>
           </div>
-          <div className="flex flex-col ">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex flex-col "
+          >
             <div className="flex flex-col items-center md:items-start mb-3 md:mb-5">
               <HumanMind className="text-primary w-10 h-10" />
               <h1 className="text-lg md:text-xl text-center">
@@ -61,7 +73,11 @@ export default function Chooseus() {
               relaxation and emotional safety from the moment you walk in.
             </p>
           </div>
-          <div className="flex flex-col ">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="600"
+            className="flex flex-col "
+          >
             <div className="flex flex-col items-center md:items-start mb-3 md:mb-5">
               <Lock className="text-primary w-10 h-10" />
               <h1 className="text-lg md:text-xl  text-center">

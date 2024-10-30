@@ -6,9 +6,8 @@ export async function fetchPhoto(endpoint: string) {
         headers: {
           Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
         },
-        next: {
-          revalidate: 60,
-        },
+        method: "GET",
+        cache: "force-cache",
       }
     );
     const data = await response.json();

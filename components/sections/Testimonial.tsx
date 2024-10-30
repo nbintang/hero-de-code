@@ -1,7 +1,7 @@
 import React from "react";
 import { Marquee } from "../ui/marquee";
 import TestimonialCard from "../TestimonialCard";
-import dataTestimonial from "@/data/dataTestimonial";
+import dataTestimonial from "@/data/testiData";
 
 export default async function Testimonial() {
   const data = await dataTestimonial();

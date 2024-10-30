@@ -27,7 +27,7 @@ const AbtSection = () => {
             </h2>
             <Separator orientation="horizontal"className="bg-black/70 my-2" />
             <p className="text-muted-foreground text-sm md:text-base ">
-              At Serenity Haven Wellness, we prioritize your emotional health
+              At HeartCare, we prioritize your emotional health
               with personalized, compassionate care. Our diverse range of
               services ensures that you receive the support you need to thrive
               and achieve lasting inner peace.

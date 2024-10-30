@@ -1,11 +1,27 @@
-import React, { Suspense } from "react";
+"use client";
+import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-
-const Maps = dynamic(() => import("@/components/Maps"), { ssr: false });
-
+import { Skeleton } from "@/components/ui/skeleton";
+import { MoveRight } from "lucide-react";
 export default function Locations() {
+  const Map = React.useMemo(
+    () =>
+      dynamic(() => import("@/components/Maps"), {
+        loading: () => (
+          <div>
+            <Skeleton className="w-full h-full absolute inset-0" />
+            <div className="flex items-center gap-2 absolute inset-0 justify-center w-full">
+              <p className="text-secondary ">Loading</p>
+              <div className="w-10 h-10 border-4 border-secondary rounded-full animate-spin border-t-transparent"></div>
+            </div>
+          </div>
+        ),
+        ssr: false,
+      }),
+    []
+  );
   return (
     <div className="w-full" id={"locations"}>
       <div className="max-w-6xl flex flex-col items-center py-9 mx-auto mt-5">
@@ -23,24 +39,20 @@ export default function Locations() {
             and we will provide the best solution.
           </p>
         </div>
-        <Suspense
-          fallback={
-            <div className="w-full h-full object-cover rounded-2xl aspect-video">
-              Loading...
-            </div>
-          }
-        >
-          <div className="overflow-hidden  mt-9 rounded-2xl shadow sm:aspect-video lg:w-full aspect-square h-96 ">
-            <Maps className="w-full h-full  object-cover" />
-          </div>
-        </Suspense>
-        <Link
-          href="https://www.google.com/maps/place/MargoCity/@-6.3727938,106.8412985,15z"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="link">View Locations</Button>
-        </Link>
+
+        <div className="overflow-hidden relative  mt-9 rounded-2xl shadow sm:aspect-video lg:w-full aspect-square h-96 ">
+          <Map />
+        </div>
+        <Button variant={"link"}>
+          <Link
+            href="https://www.google.com/maps?q=loc:-6.3727938,106.8412985"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Locations
+          </Link>
+          <MoveRight className="w-4 h-4" />
+        </Button>
       </div>
     </div>
   );
