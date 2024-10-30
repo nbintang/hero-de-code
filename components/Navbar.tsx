@@ -17,9 +17,10 @@ import { Button } from "./ui/button";
 import { useActionFloatButtonContext } from "@/context/useActionFloatButtonContext";
 import { FaWhatsapp } from "react-icons/fa";
 import useContactWA from "@/hooks/useContactWA";
+import { usePathname } from "next/navigation";
 
 const tabs = [
-  { href: "#hero", label: "Home" },
+  { href: "#hero", label: "Home", },
   { href: "#about", label: "About Us" },
   { href: "#services", label: "Our Service's" },
   { href: "#appointments", label: "Appointment's" },
@@ -32,7 +33,7 @@ export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
   const { setIsDrawerOpen } = useActionFloatButtonContext();
   const whatsappUrl = useContactWA();
-
+const pathname = usePathname();
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
@@ -99,7 +100,8 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   href={tab.href}
                   key={tab.href}
-                  className="block px-2 py-1 text-lg hover:bg-muted rounded-md transition-colors"
+                  className={`block px-2 py-1 text-lg hover:bg-muted rounded-md transition-colors ${
+                    pathname === tab.href.slice(1) ? "bg-muted" : ""}`}
                 >
                   {tab.label}
                 </Link>

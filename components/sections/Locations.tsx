@@ -14,7 +14,7 @@ export default function Locations() {
             <Skeleton className="w-full h-full absolute inset-0" />
             <div className="flex items-center gap-2 absolute inset-0 justify-center w-full">
               <p className="text-secondary ">Loading</p>
-              <div className="w-10 h-10 border-4 border-secondary rounded-full animate-spin border-t-transparent"></div>
+              <div className="w-5 h-5 border-2 border-secondary rounded-full animate-spin border-t-transparent"></div>
             </div>
           </div>
         ),
