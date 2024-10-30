@@ -9,7 +9,9 @@ import {
 
 export default function Question() {
   return (
-    <div className="text-center container md:max-w-6xl mx-auto px-4 py-28" id={"questions"}>
+    <div
+      className="text-center container md:max-w-6xl mx-auto px-4 py-28"
+      id={"questions"}>
       <div className="lg:grid-cols-2 mx-3 md:mx-0 grid gap-4 items-center grid-cols-1 ">
         <div>
           <h5 className="text-primary text-sm text-center lg:text-start ">
@@ -20,8 +22,7 @@ export default function Question() {
           </h2>
         </div>
         <p className="text-base ml-5 lg:text-lg  text-muted-foreground text-center lg:text-start ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
-          exercitationem! Praesentium quisquam ratione nemo.
+          some questions you might ask
         </p>
       </div>
 
@@ -29,7 +30,9 @@ export default function Question() {
         <div className="w-full">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>What is mental health?</AccordionTrigger>
+              <AccordionTrigger className="text-start">
+                What is mental health?
+              </AccordionTrigger>
               <AccordionContent className="text-start text-muted-foreground">
                 Mental health refers to our emotional, psychological, and social
                 well-being. It affects how we think, feel, and act, influencing
@@ -39,7 +42,7 @@ export default function Question() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-start">
                 What are some common mental health disorders?
               </AccordionTrigger>
               <AccordionContent className="text-start text-muted-foreground">
@@ -50,7 +53,7 @@ export default function Question() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-start">
                 What are some signs of poor mental health?
               </AccordionTrigger>
               <AccordionContent className="text-start text-muted-foreground">
@@ -66,7 +69,7 @@ export default function Question() {
         <div className="w-full">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-start">
                 How can I improve my mental health?
               </AccordionTrigger>
               <AccordionContent className="text-start text-muted-foreground">
@@ -78,7 +81,7 @@ export default function Question() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-start">
                 What should I do if I feel anxious or stressed?
               </AccordionTrigger>
               <AccordionContent className="text-start text-muted-foreground">
@@ -90,7 +93,7 @@ export default function Question() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>
+              <AccordionTrigger className="text-start">
                 When should I seek help for mental health issues?
               </AccordionTrigger>
               <AccordionContent className="text-start text-muted-foreground">
